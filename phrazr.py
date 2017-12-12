@@ -4,8 +4,9 @@ import sys
 SCRUM_PHRAZEBOOK_PATH = './ScrumPhrazebook.txt'
 CASEY_PHRAZEBOOK_PATH = './CaseyPhrazebook.txt'
 TY_PHRAZEBOOK_PATH = './TyPhrazebook.txt'
+TEAM_PHRAZEBOOK_PATH = './TeamPhrazebook.txt'
 
-options = ['-casey', '-scrum', '-ty']
+options = ['-casey', '-scrum', '-ty', '-team']
 
 def displayError(errorType):
 	print 'ERROR'
@@ -47,6 +48,8 @@ def generatePhraze(cmd):
 		phraze = getPhraze(CASEY_PHRAZEBOOK_PATH)
 	elif cmd == '-ty':
 		phraze = getPhraze(TY_PHRAZEBOOK_PATH)
+	elif cmd == '-team':
+		phraze = getPhraze(TEAM_PHRAZEBOOK_PATH)
 	else:
 		displayError('runtime')
 		exit()
@@ -57,8 +60,6 @@ def getPhraze(phrazebook):
 	filestream = open(phrazebook, 'r')
 	phrazes = filestream.read().strip('\n').split('\n')
 	idx = random.randint(0, len(phrazes) - 1)
-	print 'Index: ', idx
-	print '#Phrazes: ', len(phrazes)
 	return phrazes[idx]
 
 if __name__ == '__main__':
