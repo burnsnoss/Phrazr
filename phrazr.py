@@ -6,24 +6,31 @@ CASEY_PHRAZEBOOK_PATH = './CaseyPhrazebook.txt'
 TY_PHRAZEBOOK_PATH = './TyPhrazebook.txt'
 TEAM_PHRAZEBOOK_PATH = './TeamPhrazebook.txt'
 
-options = ['-casey', '-scrum', '-ty', '-team']
+options = {
+	'-casey': CASEY_PHRAZEBOOK_PATH,
+	'-scrum': SCRUM_PHRAZEBOOK_PATH,
+	'-ty': TY_PHRAZEBOOK_PATH,
+	'-team': TEAM_PHRAZEBOOK_PATH
+}
 
 def displayError(errorType):
 	print 'ERROR'
 	print 'CODE: 69'
 	if errorType == 'runtime':
-		print 'How to run Phrazr:'
-		print '~$ python phrazr.py -option'
-		print '\nRight now, we only have two options, "-scrum" and "-casey". Deal with it.'
-		print 'run ~$ "python phrazr.py -help" for more help.'
+		print 'Improper number of command line arguments. Shame on you.'
 	elif errorType == 'arguments':
-		print 'Please provide "-scrum" or "-casey" as an argument.'
+		print 'Invalid command line option.'
+	printHelp()
+
 	return  
 
 def printHelp():
 	print '\nHow to run Phrazr:'
 	print '~$ python phrazr.py -option'
-	print '"-scrum" and "-casey" are currently the only options we support.'
+	print 'Currently, we support these options:'
+	print ''
+	for opt in option:
+		print '\t', opt
 	print '\nCopyright BonerJamz Inc. 2017 - Written by McFarts.' 
 	return
 
@@ -32,7 +39,7 @@ def parseInput(argv):
 		displayError('runtime')
 		exit()
 	else:
-		if argv[1] in  options:
+		if argv[1] in options.keys():
 			return argv[1]
 		elif argv[1] == '-help':
 			printHelp()
@@ -42,17 +49,7 @@ def parseInput(argv):
 			exit()
 
 def generatePhraze(cmd):
-	if cmd == '-scrum':
-		phraze = getPhraze(SCRUM_PHRAZEBOOK_PATH)
-	elif cmd == '-casey':
-		phraze = getPhraze(CASEY_PHRAZEBOOK_PATH)
-	elif cmd == '-ty':
-		phraze = getPhraze(TY_PHRAZEBOOK_PATH)
-	elif cmd == '-team':
-		phraze = getPhraze(TEAM_PHRAZEBOOK_PATH)
-	else:
-		displayError('runtime')
-		exit()
+	phraze = getPhraze(options[cmd])
 	print phraze
 	return
 
