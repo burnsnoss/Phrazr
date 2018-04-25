@@ -99,7 +99,7 @@ if __name__ == '__main__':
 		if phraze_length.isdigit() and int(phraze_length) > 0 and int(phraze_length) <= 12:
 			generateAggregatePhraze(int(phraze_length))
 		else:
-			printError('agglength')
+			displayError('agglength')
 			exit()
 	else:
 		generatePhraze(cmd)
