@@ -19,6 +19,7 @@ options = {
 	'-ty': TY_PHRAZEBOOK_PATH,
 	'-hydra': HYDRA_PHRAZEBOOK_PATH,
 	'-celestialbeings': CELESTIALBEINGS_PHRAZEBOOK_PATH,
+	'-cornhub': CORNHUB_PHRAZEBOOK_PATH,
 	'-random': RANDOM_PHRAZEBOOK_PATH,
 	'-nathansdad': NATHANSDAD_PHRAZEBOOK_PATH
 }
