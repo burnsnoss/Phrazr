@@ -7,7 +7,9 @@ import sys
 SCRUM_PHRAZEBOOK_PATH = './ScrumPhrazebook.txt'
 CASEY_PHRAZEBOOK_PATH = './CaseyPhrazebook.txt'
 TY_PHRAZEBOOK_PATH = './TyPhrazebook.txt'
-TEAM_PHRAZEBOOK_PATH = './TeamPhrazebook.txt'
+HYDRA_PHRAZEBOOK_PATH = './HydraPhrazebook.txt'
+CELESTIALBEINGS_PHRAZEBOOK_PATH = './CelestialBeingsPhrazebook.txt'
+CORNHUB_PHRAZEBOOK_PATH = './CornHubPhrazebook.txt'
 RANDOM_PHRAZEBOOK_PATH = './RandomPhrazebook.txt'
 NATHANSDAD_PHRAZEBOOK_PATH = './NathansDadPhrazebook.txt'
 
@@ -15,7 +17,8 @@ options = {
 	'-casey': CASEY_PHRAZEBOOK_PATH,
 	'-scrum': SCRUM_PHRAZEBOOK_PATH,
 	'-ty': TY_PHRAZEBOOK_PATH,
-	'-team': TEAM_PHRAZEBOOK_PATH,
+	'-hydra': HYDRA_PHRAZEBOOK_PATH,
+	'-celestialbeings': CELESTIALBEINGS_PHRAZEBOOK_PATH,
 	'-random': RANDOM_PHRAZEBOOK_PATH,
 	'-nathansdad': NATHANSDAD_PHRAZEBOOK_PATH
 }
